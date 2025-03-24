@@ -12,8 +12,9 @@ import ResetPasswordForm from "./components/ResetPasswordForm";
 import UpdateMeForm from "./components/UpdateMeForm";
 import MainPage from "./components/MainPage";
 import SignupForm from "./components/SignupForm";
-import ForgotPasswordForm from "./components/ForgotPasswordForm";
+// import ForgotPasswordForm from "./components/ForgotPasswordForm";
 import DeleteUserForm from "./components/DeleteUserForm";
+import ForgotPasswordFormHook from "./components/ForgotPasswordFormHook";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -36,7 +37,11 @@ function App() {
               element={<LoginForm setIsAuthenticated={setIsAuthenticated} />}
             />
             <Route path="/signup" element={<SignupForm />} />
-            <Route path="/forgotPassword" element={<ForgotPasswordForm />} />
+            {/* <Route path="/forgotPassword" element={<ForgotPasswordForm />} /> */}
+            <Route
+              path="/forgotPassword"
+              element={<ForgotPasswordFormHook />}
+            />
             <Route
               path="/resetPassword/:token"
               element={<ResetPasswordForm />}
